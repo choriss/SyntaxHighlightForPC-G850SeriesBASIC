@@ -1,0 +1,62 @@
+{
+    "name": "LaTeX C Custom",
+    "type": "dark",
+    "colors": {},
+    "tokenColors": [
+        {
+            "scope": "special.linenumber.basic",
+            "settings": {
+                "foreground": "#ff9cfd",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "keyword.control",
+            "settings": {
+                "foreground": "#c586c0"
+            }
+        },
+        {
+            "scope": "special.function.basic",
+            "settings": {
+                "foreground": "#dcdcaa"
+            }
+        },
+        {
+            "scope": "variable.other",
+            "settings": {
+                "foreground": "#9cdcfe"
+            }
+        },
+        {
+            "scope": "special.operator.basic",
+            "settings": {
+                "foreground": "#569cd6"
+            }
+        },
+        {
+            "scope": "string.quoted.double.basic",
+            "settings": {
+                "foreground": "#ce9178"
+            }
+        },
+        {
+            "scope": "special.comment.basic",
+            "settings": {
+                "foreground": "#6a9955"
+            }
+        },
+        {
+            "scope": "label.asterisk.basic",
+            "settings": {
+                "foreground": "#d19a66"
+            }
+        },
+        {
+            "scope": "constant.numeric",
+            "settings": {
+                "foreground": "#b5cea8"
+            }
+        }
+    ]
+}

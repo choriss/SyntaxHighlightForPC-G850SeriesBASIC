@@ -1,0 +1,135 @@
+{
+    "scopeName": "source.basic",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#label"
+        },
+        {
+            "include": "#linenumber"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#function"
+        },
+        {
+            "include": "#operator"
+        },
+        {
+            "include": "#variable"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#constant"
+        }
+    ],
+    "repository": {
+        "linenumber": {
+            "name": "special.linenumber.basic",
+            "match": "\\b^[0-9]*\\s*"
+        },
+        "control": {
+            "name": "keyword.control",
+            "match": "\\s*(IF|THEN|ELSE|ENDIF|WHILE|WEND|FOR|TO|NEXT|GOSUB|RETURN|GOTO|ON|REPEAT|UNTIL|SWITCH|CASE|DEFAULT|ENDSWITCH)\\b"
+        },
+        "function": {
+            "name": "special.function.basic",
+            "match": "\\b(ASC|CALL|CHR\\$|CIRCLE|CLEAR|CLOSE|CLS|DATA|DEGREE|DIM|DMS\\$|END|EOF|ERASE|FIX|FRE|GCURSOR|GPRINT|GRAD|HEX\\$|INKEY\\$|INT|INPUT|INPUT\\#|LEFT$|LEN|LET|LINE|LINPUT\\#|LOAD|LOCATE|LOF|LPRINT|MID$|OPEN|PAINT|PEEK|POINT|POKE|PRESET|PRINT|PRINT\\#|PSET|RADIAN|RANDOMIZE|READ|RESTORE|RIGHT\\$|STOP|STR$|TROFF|TRON|USING|VAL|VDEG|WAIT|INP|OUT|OPEN|CLOSE|LLIST|LPRINTPIOSET|PIOGET|PIOPUT|RND)"
+        },
+        "operator": {
+            "name": "special.operator.basic",
+            "match": "\\b(AND|OR|NOT|XOR|MOD)\\b"
+        },
+        "variable": {
+            "name": "variable.other",
+            "match": "[a-zA-Z_][a-zA-Z0-9_]*[\\$]?\\s*"
+        },
+        "string": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.basic",
+                    "begin": "\"",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.begin.basic"
+                        }
+                    },
+                    "end": "\"",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.end.basic"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.basic",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "name": "comment.quoted.single.basic",
+                    "match": "^([0-9]*)\\s*(REM|')([^:]*)",
+                    "captures": {
+                        "1": {
+                            "name": "special.linenumber.basic"
+                        },
+                        "2": {
+                            "name": "special.comment.basic"
+                        },
+                        "3": {
+                            "name": "special.comment.basic"
+                        }
+                    }
+                }
+            ]
+        },
+        "label": {
+            "patterns": [
+                {
+                    "name": "label.asterisk.basic",
+                    "match": "^([0-9]*)\\s*(\\*)(.*)",
+                    "captures": {
+                        "1": {
+                            "name": "special.linenumber.basic"
+                        },
+                        "2": {
+                            "name": "label.asterisk.basic"
+                        },
+                        "3": {
+                            "name": "label.asterisk.basic"
+                        }
+                    }
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "name": "constant.numeric",
+                    "match": "\\b\\d+(\\.\\d+)?([eE][-+]?\\d+)?\\b"
+                }
+            ]
+        },
+        "while": {
+            "patterns": [
+                {
+                    "begin": "WHILE",
+                    "end": "WEND",
+                    "name": "meta.block.while",
+                    "contentName": "source.while"
+                }
+            ]
+        }
+    }
+}
